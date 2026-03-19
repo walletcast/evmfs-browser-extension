@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "EVMFS Protocol Handler",
+  "version": "1.0.0",
+  "description": "Resolve evmfs:// protocol URLs from on-chain EVM storage",
+  "permissions": [
+    "storage",
+    "webNavigation",
+    "activeTab",
+    "declarativeNetRequest",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://ethereum-sepolia-rpc.publicnode.com/*",
+    "https://rpc.hoodi.taiko.xyz/*",
+    "*://*.evmfs/*",
+    "*://*.evm/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background/main.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "omnibox": {
+    "keyword": "evmfs"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "sandbox": {
+    "pages": ["sandbox.html"]
+  },
+  "content_security_policy": {
+    "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:; child-src 'self' blob: data:; img-src * blob: data:; style-src * 'unsafe-inline' blob: data:; font-src * blob: data:; media-src * blob: data:; connect-src * blob: data:;"
+  }
+}

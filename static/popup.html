@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <h1>EVMFS</h1>
+    <span class="version">v1.0</span>
+  </div>
+
+  <div class="input-group">
+    <input type="text" id="url-input" placeholder="CID or site name (e.g. twitter)" spellcheck="false">
+    <button id="go-btn">Go</button>
+  </div>
+
+  <div class="chain-group">
+    <label for="chain-select">Chain:</label>
+    <select id="chain-select"></select>
+  </div>
+
+  <div id="status" class="status"></div>
+
+  <div class="help">
+    <p>Enter a CID (<code>0x...</code>) or site alias.</p>
+    <p>Or type <code>evmfs</code> in the address bar.</p>
+  </div>
+
+  <script src="popup/popup.js" type="module"></script>
+</body>
+</html>
