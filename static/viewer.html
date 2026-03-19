@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>EVMFS Viewer</title>
+  <link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+  <div id="loader">
+    <div class="loader-content">
+      <h1>EVMFS</h1>
+      <div class="progress-bar">
+        <div id="progress" class="progress-fill"></div>
+      </div>
+      <p id="status">Initializing...</p>
+      <p id="meta" class="meta"></p>
+    </div>
+  </div>
+
+  <div id="content" class="hidden">
+    <!-- Raw file content rendered here -->
+    <div id="raw-content"></div>
+    <!-- Site content rendered in sandboxed iframe (relaxed CSP allows blob: scripts) -->
+    <iframe id="site-frame" class="hidden" src="sandbox.html"></iframe>
+  </div>
+
+  <div id="error" class="hidden">
+    <div class="error-content">
+      <h2>Failed to load</h2>
+      <p id="error-message"></p>
+      <button id="retry-btn">Retry</button>
+    </div>
+  </div>
+
+  <script src="viewer/viewer.js" type="module"></script>
+</body>
+</html>
