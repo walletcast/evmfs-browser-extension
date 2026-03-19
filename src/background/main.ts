@@ -236,19 +236,10 @@ chrome.omnibox.setDefaultSuggestion({
   description: 'Load EVMFS content: <match>%s</match>',
 });
 
-// ── Intercept evmfs:// and *.evmfs / *.evm URLs ────────────────
+// ── Intercept *.evmfs / *.evm TLD URLs ──────────────────────────
 
 chrome.webNavigation.onBeforeNavigate.addListener((details) => {
   if (details.frameId !== 0) return;
-
-  // evmfs:// protocol
-  if (details.url.startsWith('evmfs://')) {
-    const query = details.url.replace('evmfs://', '');
-    chrome.tabs.update(details.tabId, {
-      url: chrome.runtime.getURL(`viewer.html?q=${encodeURIComponent(query)}`),
-    });
-    return;
-  }
 
   // *.evmfs or *.evm TLDs (e.g. http://twitter.evmfs, https://0xabc...def.evm)
   try {

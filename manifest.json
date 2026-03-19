@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "EVMFS Protocol Handler",
   "version": "1.0.0",
-  "description": "Resolve evmfs:// protocol URLs from on-chain EVM storage",
+  "description": "Resolve *.evmfs and *.evm TLDs from on-chain EVM storage",
   "permissions": [
     "storage",
     "webNavigation",

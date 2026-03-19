@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Zero Dependencies](https://img.shields.io/badge/Runtime%20Deps-0-brightgreen)](#zero-dependencies)
 
-Chrome extension that resolves `evmfs://` URLs and `*.evmfs` / `*.evm` TLDs directly from on-chain EVM storage. **Zero external runtime dependencies.**
+Chrome extension that resolves `*.evmfs` and `*.evm` TLDs directly from on-chain EVM storage. **Zero external runtime dependencies.**
 
 ## Install
 
@@ -28,20 +28,16 @@ npm run build
 
 ## Try It
 
-After installing, try these in Chrome's address bar:
+After installing, click any of these links (or paste in Chrome's address bar):
 
-| Input | What loads |
-|-------|-----------|
-| `evmfs twitter` | Web3 Twitter clone (type in omnibox) |
-| `evmfs dgn` | DGN dApp |
-| `http://twitter.evmfs` | Same site via fake TLD |
-| `http://dgn.evmfs` | DGN via fake TLD |
-| `http://twitter.evm` | `.evm` TLD also works |
+| Link | What loads |
+|------|-----------|
+| [twitter.evmfs](http://twitter.evmfs) | Web3 Twitter clone |
+| [dgn.evmfs](http://dgn.evmfs) | DGN dApp |
+| [twitter.evm](http://twitter.evm) | `.evm` TLD also works |
+| [dgn.evm](http://dgn.evm) | DGN via `.evm` |
 
-Or paste a raw CID:
-```
-evmfs 0x6ad301484330...
-```
+Or type in the omnibox: `evmfs twitter` / `evmfs dgn`
 
 ## Architecture
 
